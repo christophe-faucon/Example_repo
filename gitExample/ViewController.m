@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *contributors = @[@"Christophe",
+                              @"Haider"];
+    
+    NSString *contributorsString = [contributors componentsJoinedByString:@"\n"];
+    
+    self.textView.text = [NSString stringWithFormat:@"The contributors for this project are:\n%@",contributorsString];
 }
 
 - (void)didReceiveMemoryWarning {
